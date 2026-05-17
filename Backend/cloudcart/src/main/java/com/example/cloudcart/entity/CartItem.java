@@ -1,0 +1,30 @@
+package com.example.cloudcart.entity;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import lombok.*;
+
+@Entity
+@Table(name = "cart_items")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class CartItem {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String sessionId;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
+
+    @Min(1)
+    @Column(nullable = false)
+    private Integer quantity;
+}

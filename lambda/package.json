@@ -1,0 +1,7 @@
+{
+  "name": "cloudcart-report-lambda",
+  "version": "1.0.0",
+  "description": "Lambda /report — CloudCart",
+  "type": "module",
+  "main": "handler.js"
+}
