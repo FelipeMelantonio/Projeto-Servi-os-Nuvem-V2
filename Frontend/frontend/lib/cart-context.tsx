@@ -18,7 +18,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     let id = localStorage.getItem('cc-session-id');
     if (!id) {
-      id = crypto.randomUUID();
+      id = Math.random().toString(36).substring(2) + Date.now().toString(36);
       localStorage.setItem('cc-session-id', id);
     }
     setSessionId(id);
