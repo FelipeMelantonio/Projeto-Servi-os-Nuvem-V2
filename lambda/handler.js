@@ -6,7 +6,7 @@
  * Variável de ambiente obrigatória:
  *   API_URL — URL base do API Gateway, ex: https://abc123.execute-api.us-east-1.amazonaws.com/prod
  */
-export const handler = async () => {
+export const handler = async (event,context) => {
   const API_URL = process.env.API_URL;
 
   if (!API_URL) {
